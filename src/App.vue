@@ -164,16 +164,16 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Lesson from './components/Lesson.vue'
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Lesson
   },
   data(){
     return {
-        sitename: "CW1-CST3145",
+        sitename: "CW3-CST3145",
         lessons: [],
         cart: [],
         sortBy: "",
