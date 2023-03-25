@@ -45,7 +45,7 @@
                       </div>
                   </div>
                   <div class="card-footer border-secondary bg-transparent">
-                      <button class="btn btn-block btn-primary my-3 py-3" v-on:click="checkoutSubmit">Proceed To Checkout</button>
+                      <button class="btn btn-block btn-primary my-3 py-3" v-bind:disabled="!checkoutErrorsExist(errors.first('FullName'), errors.first('phoneNumber'))" v-on:click="checkoutSubmit">Proceed To Checkout</button>
                   </div>
               </form>
           </div>
@@ -59,7 +59,8 @@ export default {
   props: [
     "lessonsInCart",
     "fullName",
-    "phoneNumber"
+    "phoneNumber",
+    "checkoutErrorsExist"
   ],
   methods: {
     removeFromCart(lessonInCart){

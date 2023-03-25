@@ -93,6 +93,7 @@
                     :fullName.sync="checkoutFields.fullName"
                     :phoneNumber.sync="checkoutFields.phoneNumber"
                     @checkoutLessonsSubmit="checkoutSubmit"
+                    :checkoutErrorsExist="checkoutErrorsExist"
                 />
             </div>
         </div>
