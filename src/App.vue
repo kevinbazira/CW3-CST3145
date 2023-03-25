@@ -72,7 +72,12 @@
                             </div>
                         </div>
                        
-                        <div class="col-lg-4 col-md-6 col-sm-12 pb-1" v-for="lesson in (searchedLessons.length === 0 ? sortedLessons : searchedLessons)" :key="lesson.id">
+                        <!--Vue Lesson child component-->
+                        <Lesson :lessons="(searchedLessons.length === 0 ? sortedLessons : searchedLessons)" />
+
+                        <!--
+                        <div class="row">
+                          <div class="col-lg-4 col-md-6 col-sm-12 pb-1" v-for="lesson in (searchedLessons.length === 0 ? sortedLessons : searchedLessons)" :key="lesson.id">
                                 <div class="card product-item border-0 mb-4">
                                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                                         <img class="img-fluid w-100" v-bind:src="lesson.images" v-bind:alt="lesson.subject">
@@ -91,7 +96,12 @@
                                         </button>
                                     </div>
                                 </div>
+                          </div>
                         </div>
+                      -->
+                        
+                      
+
                     </div>
                 </div>
             </div>
