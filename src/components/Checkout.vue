@@ -44,11 +44,9 @@
                           <input class="form-control" type="text" placeholder="Phone Number" name="phoneNumber" :value="phoneNumber" @input="$emit('update:phoneNumber', $event.target.value)" v-validate="'required|numeric'" required>
                       </div>
                   </div>
-                  <!--
                   <div class="card-footer border-secondary bg-transparent">
-                      <button class="btn btn-block btn-primary my-3 py-3" v-bind:disabled="!checkoutErrorsExist(errors.first('FullName'), errors.first('phoneNumber'))" v-on:click="checkoutSubmit">Proceed To Checkout</button>
+                      <button class="btn btn-block btn-primary my-3 py-3" v-on:click="checkoutSubmit">Proceed To Checkout</button>
                   </div>
-                  -->
               </form>
           </div>
       </div>
@@ -66,6 +64,9 @@ export default {
   methods: {
     removeFromCart(lessonInCart){
       this.$emit("removeLessonFromCart", lessonInCart);
+    },
+    checkoutSubmit(){
+      this.$emit("checkoutLessonsSubmit");
     }
   }
 }

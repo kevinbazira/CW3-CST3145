@@ -92,6 +92,7 @@
                     @removeLessonFromCart="removeFromCart"
                     :fullName.sync="checkoutFields.fullName"
                     :phoneNumber.sync="checkoutFields.phoneNumber"
+                    @checkoutLessonsSubmit="checkoutSubmit"
                 />
             </div>
         </div>
