@@ -77,7 +77,7 @@
                             :lessons="(searchedLessons.length === 0 ? sortedLessons : searchedLessons)"
                             :cartCount="cartCount"
                             :canAddToCart="canAddToCart"
-                            @addItemToCart="addToCart"
+                            @addLessonToCart="addToCart"
                         />
 
                     </div>
@@ -89,7 +89,7 @@
                 <!-- Vue Checkout child component -->
                 <Checkout
                     :lessonsInCart="lessonsInCart"
-                    @removeItemFromCart="removeFromCart"
+                    @removeLessonFromCart="removeFromCart"
                 />
             </div>
         </div>
@@ -211,7 +211,6 @@ export default {
   },
   created() {
       // GET request to fetch lessons JSON data from server and add it to lessons in Vue data
-      // retrieve all the lesson information in MongoDB Atlas through a REST API and pass it to Lesson with a prop
       fetch("https://cw2-cst3145-2023.herokuapp.com/collection/lessons")
           .then(response => response.json())
           .then(data => (this.lessons = data));

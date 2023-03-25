@@ -63,7 +63,7 @@ export default {
   ],
   methods: {
     removeFromCart(lessonInCart){
-      this.$emit("removeItemFromCart", lessonInCart);
+      this.$emit("removeLessonFromCart", lessonInCart);
     }
   }
 }

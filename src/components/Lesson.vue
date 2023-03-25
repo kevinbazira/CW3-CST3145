@@ -33,7 +33,7 @@ export default {
   ],
   methods: {
     addToCart(lesson){
-      this.$emit("addItemToCart", lesson);
+      this.$emit("addLessonToCart", lesson);
     }
   }
 }
