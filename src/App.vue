@@ -86,7 +86,7 @@
         </div>
         <div v-else>
             <div class="container-fluid pt-5">
-                <!-- Vue Checkout child component v-model:fullName="checkoutFields.fullName"-->
+                <!-- Vue Checkout child component -->
                 <Checkout
                     :lessonsInCart="lessonsInCart"
                     @removeLessonFromCart="removeFromCart"
