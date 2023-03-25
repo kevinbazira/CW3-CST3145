@@ -19,11 +19,9 @@
                           {{lessonInCart.price}}
                       </td>
                       <td class="align-middle">
-                        <!--
-                          <button class="btn btn-sm btn-primary" v-on:click="removeFromCart(lessonInCart)">
-                              <i class="fa fa-times"></i>
-                          </button>
-                        -->
+                        <button class="btn btn-sm btn-primary" v-on:click="removeFromCart(lessonInCart)">
+                            <i class="fa fa-times"></i>
+                        </button>
                       </td>
                   </tr>
               </tbody>
@@ -64,8 +62,8 @@ export default {
     "lessonsInCart"
   ],
   methods: {
-    addToCart(lesson){
-      this.$emit("addItemToCart", lesson);
+    removeFromCart(lessonInCart){
+      this.$emit("removeItemFromCart", lessonInCart);
     }
   }
 }

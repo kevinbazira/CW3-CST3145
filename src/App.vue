@@ -89,6 +89,7 @@
                 <!-- Vue Checkout child component -->
                 <Checkout
                     :lessonsInCart="lessonsInCart"
+                    @removeItemFromCart="removeFromCart"
                 />
             </div>
         </div>
