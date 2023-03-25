@@ -12,6 +12,12 @@
           </div>
           <span>Spaces: {{lesson.spaces - cartCount(lesson.id)}}</span>
         </div>
+        <div class="card-footer bg-light border text-center">
+          <button class="btn btn-sm text-dark p-0 w-100 h-100" v-on:click="addToCart(lesson)" v-bind:disabled="!canAddToCart(lesson)">
+            <i class="fas fa-shopping-cart text-primary mr-1"></i>
+              Add To Cart
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -22,7 +28,13 @@ export default {
   name: "Lesson",
   props: [
     "lessons",
-    "cartCount"
-  ]
+    "cartCount",
+    "canAddToCart"
+  ],
+  methods: {
+    addToCart(lesson){
+      this.$emit("addItemToCart", lesson);
+    }
+  }
 }
 </script>

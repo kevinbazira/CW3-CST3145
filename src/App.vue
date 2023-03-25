@@ -76,6 +76,8 @@
                         <Lesson
                             :lessons="(searchedLessons.length === 0 ? sortedLessons : searchedLessons)"
                             :cartCount="cartCount"
+                            :canAddToCart="canAddToCart"
+                            @addItemToCart="addToCart"
                         />
 
                         <!--
