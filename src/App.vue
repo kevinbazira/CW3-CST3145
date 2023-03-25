@@ -71,9 +71,12 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                         <!--Vue Lesson child component-->
-                        <Lesson :lessons="(searchedLessons.length === 0 ? sortedLessons : searchedLessons)" />
+                        <Lesson
+                            :lessons="(searchedLessons.length === 0 ? sortedLessons : searchedLessons)"
+                            :cartCount="cartCount"
+                        />
 
                         <!--
                         <div class="row">
