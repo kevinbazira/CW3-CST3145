@@ -86,10 +86,12 @@
         </div>
         <div v-else>
             <div class="container-fluid pt-5">
-                <!-- Vue Checkout child component -->
+                <!-- Vue Checkout child component v-model:fullName="checkoutFields.fullName"-->
                 <Checkout
                     :lessonsInCart="lessonsInCart"
                     @removeLessonFromCart="removeFromCart"
+                    :fullName.sync="checkoutFields.fullName"
+                    :phoneNumber.sync="checkoutFields.phoneNumber"
                 />
             </div>
         </div>
@@ -121,7 +123,7 @@ export default {
         orderBy: "ascending",
         showShopPage: true,
         lessonsInCart: [],
-        checkout: {
+        checkoutFields: {
             fullName: "",
             phoneNumber: ""
         },
@@ -157,7 +159,7 @@ export default {
       },
       checkoutErrorsExist(fullNameErrors, phoneNumberErrors){
           let errorsExist;
-          if((this.checkout.fullName === "" || this.checkout.phoneNumber === "") && (fullNameErrors === undefined || phoneNumberErrors === undefined)){
+          if((this.checkoutFields.fullName === "" || this.checkoutFields.phoneNumber === "") && (fullNameErrors === undefined || phoneNumberErrors === undefined)){
               errorsExist = false;
           } else {
               errorsExist = !fullNameErrors && !phoneNumberErrors;
